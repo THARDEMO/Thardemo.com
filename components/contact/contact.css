@@ -1,0 +1,144 @@
+#Contact {
+    /* position: relative; */
+
+    grid-area: 6;
+
+    height: 100%;
+    margin: unset;
+    padding-top: 10rem;
+    padding: 5rem 1.5rem 0 1.5rem;
+    color: var(--MainBG);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+
+    position: relative;
+
+
+    & .LetsConnect {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        & h1 {
+            background: linear-gradient(90deg, #0ACF83 -9.36%, #CFEE4C 117.37%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            padding-right: 700px;
+            margin-bottom: 2rem;
+        }
+    
+        & p, h4 {
+            /* text-align: center; */
+            margin: unset;
+            margin: .5rem;
+            user-select: text;
+            color: #ffffff97;
+            
+        }
+    
+    }
+
+    & .contactInfo {
+        display: flex;
+        justify-content: end;
+        align-items: center; 
+        height: 100%;
+
+        & ul {
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            list-style-type: none;
+            margin: unset;
+            padding: unset; 
+
+            & li {
+                text-decoration: unset;
+                height: 60px;
+
+                & img {
+                    height: 100%;
+                    filter: opacity( 50%);
+                    transition: filter .2s ease;
+                }
+
+                & img:hover {
+                    filter: opacity( 100%);
+                }
+            }
+        }
+    }
+}
+
+#Contact > div {
+    width: 30svw;
+    min-width: 350px;
+}
+
+
+@media ( max-width: 650px) {
+  
+    #Contact {
+        
+        grid-template-columns: repeat(1, 1fr);
+
+        & .LetsConnect {
+
+            & h1  {
+                font-size: 98px;
+                padding: 0 50px;
+                scale: .9;
+            }
+
+            & h1, h4, p {
+                text-align: center;
+            }
+        }
+
+        & .contactInfo {
+            display: flex;
+            align-items: end;
+            justify-content: center;
+    
+
+            & ul {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            & ul li {
+                height: 40px;
+            }
+        }
+    }
+
+    #Contact > div {
+        width: auto;
+        min-width: 100%;
+    }
+}
+
+.lastBlob {
+    background: var( --ExtGreen);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: -2000;
+
+    height: 500px;
+    border-radius: 75% 0 20% 15%;
+    opacity: .5;
+    rotate: 15deg;
+    filter: blur( 75px);
+
+    width: 700px !important;
+
+}

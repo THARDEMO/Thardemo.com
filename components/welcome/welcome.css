@@ -1,0 +1,207 @@
+#Welcome {
+    margin: 40rem 0 25rem 0;
+    display: grid;
+    grid-area: 2;
+
+    /* position: relative; */
+
+    & h1, h2, h3, h4, p {
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+
+    & .gridContainer--welcome {
+        display: grid;
+
+        padding: 10rem 0;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+
+        & img {
+            height: 50svw;
+            width: 43svw;
+
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.387);
+        }
+
+        & .firstSection {
+            align-self: end;
+
+            & h2 {
+                width: 85%;
+                margin-bottom: 3rem;
+            }
+
+            & p {
+                text-align: center;
+                width: 85%;
+            }
+        }
+
+        & aside {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            & h2 {
+                text-align: center;
+            }
+
+        }
+
+        & .flex--experience {
+            justify-content: end;
+        }
+
+        & ul {
+            list-style-type: none;
+
+            & li {
+
+                margin: 30px 0;
+
+                & h3, p {
+                    margin: 5px;
+                }
+
+                & .timeperiod--experience {
+                    font-family: 'Montserrat Medium';
+                    letter-spacing: -1px;
+                    font-size: 15px;
+                    margin-left: 10px;
+                    opacity: 1;
+                }
+
+                & a {
+                    text-decoration: none;
+                    color: unset;
+                }
+
+            }
+        }
+        
+        & .imageOne {
+            transform: rotate(5deg);
+        }
+        & .imageTwo {
+            transform: rotate(-5deg);
+        }
+    }
+
+    & .LinkTo {
+        margin: 10rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+
+        & h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        & a {
+            /* height: 100px; */
+            /* width: 100px; */
+            background: black;
+            filter: invert(1);
+            mix-blend-mode: difference;
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Montserrat Medium';
+
+            color: var(--MainBG);
+            text-decoration: unset;
+        }
+        /* grid-template-columns: 1fr !important; */
+
+    }
+
+}
+
+.welcomeBlob--Fixed {
+    height: 0px;
+    width: 0px;
+    border-radius: 50%;
+    background: var( --MainTxt);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+
+    z-index: -100;
+
+    transition: height .4s ease, width .4s ease;
+}
+
+
+.welcomeBlob--showing {
+    height: 55vw;
+    width: 55vw;
+}
+
+
+.arrowLink::after {
+    display: inline-block;
+    content: '';
+    height: 15px;
+    width: 25px;
+    background-image: url("data:image/svg+xml,%3Csvg width='51' height='51' viewBox='0 0 51 51' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.57812 50.1255L0.20166 44.749L37.0688 7.88184H4.04199V0.201172H50.126V46.2852H42.4453V13.2583L5.57812 50.1255Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+@media ( max-width: 650px) {
+
+    #Welcome {
+        margin: 30rem 0;
+
+        & h2 {
+            font-size: 52px;
+        }
+    
+        & .gridContainer--welcome {
+            grid-template-columns: repeat(1, 1fr);
+    
+            & img {
+                height: 600px;
+                width: 90svw;
+            }
+    
+            & .firstSection {
+    
+                & h2 {
+                    margin-top: 3rem;
+                }
+            }
+    
+            & ul {
+                list-style-type: none;
+    
+                & li {
+                    margin: 20px 0;
+                }
+            }
+            
+            & .imageOne {
+                transform: rotate(2deg);
+            }
+            & .imageTwo {
+                transform: rotate(-2deg);
+            }
+        }
+    
+    }
+
+    .welcomeBlob--showing {
+        height: 70vh;
+        width: 70vh;
+    }
+    
+}

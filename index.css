@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'Futura Bold';
+    src: url( '../media/fonts/Futura\ Heavy\ font.ttf') format( 'truetype');
+}
+@font-face {
+    font-family: 'Futura Light';
+    src: url( '../media/fonts/futura\ light\ bt.ttf') format( 'truetype');
+}
+@font-face {
+    font-family: 'Montserrat Medium';
+    src: url( '../media/fonts/Montserrat-Medium.ttf') format( 'truetype');
+}
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url( '../media/fonts/Montserrat-Regular.ttf') format( 'truetype');
+}
+@font-face {
+    font-family: 'Montserrat Heavy';
+    src: url( '../media/fonts/Montserrat-SemiBold.ttf') format( 'truetype');
+}
+
+:root {
+    /* COLORS */
+    --MainBG: #E2E6DE;
+    --MainTxt: #000000;
+    --ExtGreen: #C7EF00;
+    --NavColor: #ffffff;
+    
+    --LhtPurple: #B337E0;
+    --DrkPurple: #6C2BAD;
+    --LhtBlue: #4F7FDD;
+    --DrkBlue: #283685;
+    --LhtGreen: #7BAE7F;
+    --DrkGreen: #295824;
+
+    --transparent: #ffffff00;
+
+    /* FONTS */
+    --FuturaBold: 'Futura Bold';
+    --FuturaLight: 'Futura Light'
+
+    /* font-family: 'Montserrat Heavy'; */
+    /* font-family: 'Montserrat Medium'; */
+    /* font-family: 'Montserrat Light'; */
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* SCROLLBARS ON CHROME, EDGE, SAFARI, OPERA */
+::-webkit-scrollbar {
+    width: 3px;
+}
+  
+::-webkit-scrollbar-track {
+    width: 10px;
+    /* background: var(--MainTxt); */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ExtGreen);
+    border-radius: 10px;
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--MainBG);
+    /* overflow: hidden; */
+    transition: background .3s ease-in-out;
+
+    overflow-x: hidden;
+}
+
+main {
+    /* padding: 1.5rem; */
+    display: grid;
+    /* grid-auto-columns: 100svh; */
+
+    height: fit-content;
+    /* overflow-y: scroll; */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100svh;
+    margin: 0 1.5rem;
+
+    /* overflow-y: visible; */
+    
+    /* position: relative; */
+    /* top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+    /* overflow-x: hidden; */
+    transition: top ease-in-out .5s;
+}
+
+/* FONT STYLING */
+h1, 
+h2 {
+    font-family: var( --FuturaBold);
+    letter-spacing: -3.5px;
+    line-height: 75%;
+    margin: 0;
+}
+
+h1 {
+    font-size: 169px;
+    letter-spacing: -8.5px;
+}
+h2 {
+    font-size: 75px;
+    line-height: 85%;
+}
+
+h3,
+h4 {
+    line-height: 85%;
+    letter-spacing: -2px;
+}
+
+h3 {
+    font-size: 30px;
+    /* font-size: 36px; */
+    /* font-size: 15px; */
+    /* letter-spacing: .1em;
+    line-height: 20px; */
+    font-family: 'Montserrat Heavy';
+}
+
+h4 {
+    font-family: var(--FuturaLight);
+    font-size: 52px;
+    margin: 0px;
+}
+
+p {
+    font-size: 26px;
+    line-height: 26px;
+    font-family: 'Futura Light';
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+@media ( max-width: 1400px) {
+    
+    h1 {
+        font-size: 160px;
+        letter-spacing: -8.5px;
+    }
+    h2 {
+        font-size: 64px;
+    }
+    
+    
+    h3 {
+        font-size: 24px;
+    }
+    
+    h4 {
+        font-size: 30px;
+        margin: 0px;
+    }
+    
+    p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+}
+
+.Utility--MoveUp {
+    top: -100vh;
+}
+
+.Utility--currentPage {
+    top: 100vh;
+}
+
+/* REVEAL ME ON SIGHT */
+
+.revealMe--onsight {
+    transition: opacity .5s ease-in-out;
+    opacity: 0;
+}
+ 
+.observing--element {
+    opacity: 1;
+}

@@ -1,0 +1,193 @@
+#Landing {
+    grid-area: 1;
+}
+
+.LandingPage {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat( 2, auto);
+    grid-auto-rows: auto;
+
+    position: relative;
+    
+    & aside {
+        grid-area: 1 / 2;
+        z-index: 10;
+    
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    & h1 {
+        display: flex;
+        align-items: end;
+        margin: 25px 0;
+        font-size: 248px;
+    }
+
+    & .remindPeopletoScroll {
+        position: absolute;
+        bottom: 2%;
+        right: 0;
+
+        z-index: 200;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background: var( --MainBG);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        & p {
+            /* color: var(--MainBG); */
+            font-size: 17px;
+        }
+    }
+}
+
+.vertical--text {
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);  
+}
+
+.background--Sphere {
+    position: absolute;
+    z-index: 0;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: end;
+    justify-content: end;
+
+    overflow: hidden;
+}
+
+.movementBlob {
+    position: absolute;    
+    border-radius: 45%;
+    
+}
+
+.staticBlob {
+    background-color: var(--ExtGreen);
+    height: 441px;
+    width: 290px;
+    right: -85px;
+    bottom: -147px;
+    transform: rotate( 8deg);
+}
+
+.bigBlob {
+    animation: movementLanding 20s infinite;
+    background: rgb(199,239,0);
+    background: linear-gradient(103deg, rgba(199,239,0,1) 0%, rgba(199,239,0,1) 43%, rgba(208,255,0,0.5420634806657038) 100%); 
+    
+    right: -100px;
+    bottom: -250px;
+    height: 450px;
+    width: 40vw;
+    min-width: 400px;
+}
+
+.smallBlob {
+    animation: movementSmallBlob 10s infinite;
+    background-color: var( --ExtGreen);
+
+    height: 241px;
+    width: 330px;
+    bottom: -186px;
+    right: 219px;
+}
+
+.blobFilters {
+    filter: blur(30px);
+}
+
+.mainBG--landingAsset {
+    transform: translate( 200px, 750px);
+}
+
+
+@keyframes movementLanding {
+
+    from {
+        transform: rotate( 360deg);
+        scale: 1;
+    }
+
+    50% {
+        scale: .9;
+    }
+
+    to {
+        transform: rotate( 0deg);
+        scale: 1;
+    }
+}
+
+@keyframes movementSmallBlob {
+
+    from {
+        width: 330px;
+        /* transform: skew(0); */
+    }
+
+    50% {
+        width: 450px;
+        /* transform: skew(-0.06turn, 18deg); */
+    }
+
+    to {
+        width: 330px;
+        /* transform: skew(0); */
+    }
+}
+
+@media ( max-width: 1400px) {
+    .LandingPage h1 {
+        font-size: 150px;
+    }
+}
+@media ( max-width: 650px)
+{
+
+    .LandingPage {
+        grid-template-columns: 1fr;
+
+        & aside {
+            grid-area: 2 / 1;
+            align-items: start;
+            justify-content: center;
+        }
+
+        & h1 {
+            font-size: 76px;
+            letter-spacing: -5.5px;
+            margin: 0;
+            justify-content: center;
+        }
+
+        & .remindPeopletoScroll {
+            display: none;
+        }
+    }
+
+
+
+    .vertical--text {
+        writing-mode: horizontal-tb;
+        transform: unset;  
+        padding: 10px;
+
+        & br {
+            display: none;
+        }
+    }
+}
