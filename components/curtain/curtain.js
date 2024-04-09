@@ -2,7 +2,7 @@ import { PubSub } from "../../logic/pubsub.js";
 import * as cManager from '../cManager.js';
 
 const IM = [ 'Developer & Designer _', 'Greetings My Name is _'];
-const DOM = document.querySelector( '.generative--Heading');
+// const DOM = document.querySelector( '.generative--Heading');
 
 export const component = {
     domID: 'curtain',
@@ -15,8 +15,13 @@ export const component = {
 
 
 // export function curtain() {
-function render( test ) {
+function render( parentDOM ) {
+    parentDOM.classList.add( 'init--AppCurtain');
+    parentDOM.innerHTML = `<h3 class="gradient--Text FFdeg--green generative--Heading"></h3>`
 
+    const DOM = parentDOM.querySelector( '.generative--Heading');
+
+    // console.log( 'curtain');
 
     let I = 0;
     let currentMessage = 0;
@@ -35,7 +40,7 @@ function render( test ) {
             [ ...IM[currentMessage]].map( char => `<span class="hiddenLetter">${char}</span>`).forEach( node => DOM.innerHTML += node);
         }
 
-        const characters = document.querySelectorAll( 'h3 span');
+        const characters = parentDOM.querySelectorAll( 'h3 span');
         const totalIterations = IM[ currentMessage].length * 2;
         const middle = Math.floor(totalIterations / 2)
 
@@ -54,7 +59,7 @@ function render( test ) {
         
         //REMOVE CHARS
         if( I > middle ) {
-            const VC = document.querySelectorAll( 'h3 span:not(.hiddenLetter)');
+            const VC = parentDOM.querySelectorAll( 'h3 span:not(.hiddenLetter)');
             VC[VC.length - 1].classList.toggle( 'hiddenLetter');
         }
 

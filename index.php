@@ -1,5 +1,5 @@
 <?php
-    $ignore_files = [".DS_Store", ".", "..", "cManager.js", "curtain"];
+    $ignore_files = [".DS_Store", ".", "..", "cManager.js"];
     $path = "./components";
 
     function importStyles( $path ) 
