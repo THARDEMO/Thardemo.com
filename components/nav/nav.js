@@ -5,13 +5,22 @@ export const component = {
     parentID: 'body',
     elementType: 'nav',
 
-    preRender: () => cManager.renderComponent( component ),
+    page: null,
+
+    preRender: ( page ) => {
+        if( page ) component.page = page;
+        cManager.renderComponent( component )
+    },
     render
 }
 
-const content = [ {section: 'Welcome', title: 'About'}, {section: 'Projects', title: 'Projects' }, {section: 'Contact', title: 'Contact'}];
+const contentMain = [ {section: 'Welcome', title: 'About'}, {section: 'Projects', title: 'Projects' }, {section: 'Contact', title: 'Contact'}];
+const contentPage = [{ section: 'Home', title: 'Home'}, {section: 'Blog', title: 'Blog'}, {section: 'Contact', title: 'Contact'}]
 
 function render( DOM ) {
+
+    const content = component.page ? contentPage : contentMain;
+
     //generate content
     content.forEach( link => {
 
@@ -19,6 +28,7 @@ function render( DOM ) {
         
         const hyperLink = document.createElement( 'a');
         hyperLink.href = '#' + section;
+        if( section === 'Home') hyperLink.href = window.origin;
         hyperLink.innerHTML = `
             <h3 class="text--NAV">${title}</h3>
         `;

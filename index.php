@@ -37,22 +37,11 @@
     <?php echo importStyles( $path ) ?>
 </head>
 <body id="body">
-    <!-- <section class="init--AppCurtain">
-        <h3 class="gradient--Text FFdeg--green generative--Heading"></h3>
-    </section> -->
-
-    <!-- <nav></nav> -->
 
     <main id="wrapper"></main>
     <footer><p style="color: rgba(255, 255, 255, 0.5); text-align: center;">| thardemo.com | <?php echo date("Y") ?> |</p></footer>
 
     <script type="module">
-
-            // import observeElements from './logic/observer.js';
-            // import { curtain } from './components/curtain/curtain.js';
-            // curtain();
-            // import observeElements from './logic/observer.js';
-            // observeElements( '.revealMe--onsight', 'observing--element');
 
             let COMPONENTS = [];
             <?php 
@@ -60,7 +49,15 @@
                 $URL = $_SERVER['REQUEST_URI'];
                 $view = ltrim(parse_url($URL, PHP_URL_PATH), '/');  
             
-                addComponents( ".", "components");
+                if( $view === 'project') 
+                {
+                    addComponents( "./components", "project");
+                }
+                else {
+                    $ignore_files[] = 'project';
+                    addComponents( ".", "components");
+                }
+
 
                 function addComponents( $path, $current_dir)
                 {
@@ -81,8 +78,6 @@
                 }
             ?>
 
-                console.log( COMPONENTS);
-
             Promise.all( COMPONENTS.map( component => import( component )))
             .then( components => components.forEach( module => {
 
@@ -90,6 +85,8 @@
 
                     module.component.preRender();
             }));
+
+
 
     </script>
 

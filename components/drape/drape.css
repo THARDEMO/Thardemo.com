@@ -1,0 +1,42 @@
+#Drape {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+
+    background: black;
+    height: 100svh;
+    /* width: 0; */
+
+    transition: width .5s ease-in-out;
+}
+
+.Drape--open {
+    width: 100svw;
+    animation: openDrape .5s ease-in-out forwards;
+}
+
+.Drape--close {
+    width: 100svw;
+    transform-origin: right;
+    animation: closeDrape .5s .3s ease-in-out forwards;
+}
+
+@keyframes openDrape {
+    0% {
+        transform: translate(-100%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+@keyframes closeDrape {
+    15% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(100%);
+    }
+}
+

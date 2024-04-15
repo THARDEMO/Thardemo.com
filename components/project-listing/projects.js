@@ -1,9 +1,12 @@
-import observeElements from "../../logic/observer.js";
+// import observeElements from "../../logic/observer.js";
 import { STATE } from "../../logic/state.js";
 import * as cManager from '../cManager.js';
 import { OBSERVER } from "../../identity/observer.js";
+import { PubSub } from "../../logic/pubsub.js";
+import { activateDrape } from "../../identity/activateDrape.js";
 
-const path = 'https://thardemo.com';
+// const path = 'https://www.thardemo.com';
+const path = window.location.origin;
 const projects = STATE.Get( 'projects');
 
 export const component = {
@@ -27,8 +30,18 @@ function render( DOM ) {
     for( const project of projects) {
 
         const container = document.createElement( 'a');
-        container.href = `${path}${project['endpoint']}`
-        container.target = '_blank';
+        container.href = `${path}/project?title=${project['title']}`;
+        activateDrape( container, container.href)
+        // container.onclick = ( e ) => {
+        //     e.preventDefault();
+
+        //     PubSub.publish
+        //     ({
+        //         event: 'DRAPE::open',
+        //         detail: container.href
+        //     })
+        // }
+        // container.target = '_blank';
         
         const projectDiv = document.createElement( 'div');
         projectDiv.classList.add( 'project');

@@ -2,7 +2,6 @@ import { PubSub } from "../../logic/pubsub.js";
 import * as cManager from '../cManager.js';
 
 const IM = [ 'Developer & Designer _', 'Greetings My Name is _'];
-// const DOM = document.querySelector( '.generative--Heading');
 
 export const component = {
     domID: 'curtain',
@@ -13,15 +12,12 @@ export const component = {
     render
 }
 
-
-// export function curtain() {
 function render( parentDOM ) {
     parentDOM.classList.add( 'init--AppCurtain');
     parentDOM.innerHTML = `<h3 class="gradient--Text FFdeg--green generative--Heading"></h3>`
 
     const DOM = parentDOM.querySelector( '.generative--Heading');
 
-    // console.log( 'curtain');
 
     let I = 0;
     let currentMessage = 0;
