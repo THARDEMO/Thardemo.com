@@ -166,6 +166,7 @@ const _state = {
     projects: [
         { 
             title: 'ClassCode',
+            id: 'ClassCode',
             endpoint: 'https://www.thardemo.com/app/classcode/',
             tags: ['JavaScript', 'Php', 'Team Project', 'First App', 'Desktop'],
             headerIMG: './media/images/ClassCode.png',
@@ -200,6 +201,7 @@ const _state = {
         }, 
         {
             title: 'Tipsy',
+            id: 'Tipsy',
             endpoint: 'https://thardemo.com/app/tipsy/',
             headerIMG: './media/images/Tipsy.png',
             tags: ['React', 'Php', 'Mobile', 'Party App'],
@@ -231,6 +233,7 @@ const _state = {
         }, 
         {
             title: 'Egg Timer',
+            id: 'EggTimer',
             endpoint: 'https://www.thardemo.com/app/eggtimer/',
             headerIMG: './media/images/EggTimer.png',
             tags: ['JavaScript', 'Design', 'Mobile', 'SVG'],
@@ -252,6 +255,7 @@ const _state = {
         },
         {
             title: 'Life Journey Visualization',
+            id: 'LifeJourney',
             endpoint: 'https://www.thardemo.com/app/Life%20Journey/',
             headerIMG: './media/images/LifeJourney.png',
             tags: ['D3', 'Data Visualization', 'SVG', 'Desktop'],

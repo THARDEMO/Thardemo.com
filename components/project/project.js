@@ -82,16 +82,16 @@ function render( DOM ) {
 
     PROJECT['blog']?.forEach( section => {
 
-        const blogSection = document.createElement( 'div');
+        const blogSection = DOM.querySelector( '#Blog');
         blogSection.classList.add( 'blogSection');
-        blogSection.innerHTML = `<h3 class="blogH3">${section.header}</h3>`;
+        blogSection.innerHTML += `<h3 class="blogH3">${section.header}</h3>`;
 
         section['paragraphs'].forEach( p => {
             blogSection.innerHTML += `<p>${p}</p>`
         });
 
     
-        DOM.querySelector( '#Blog').append( blogSection);
+        // DOM.querySelector( '#Blog').append( blogSection);
     })
 
 
@@ -103,23 +103,23 @@ function render( DOM ) {
         otherProjects.splice( randomIdx, 1);
     }
 
-
     displayProjects.forEach( p => {
-        DOM.querySelector( '.secondaryProjectContainer').innerHTML += `
-            <a href="${window.location.origin}/project?title=${p.title}">
-                <img src="${p.headerIMG}"/>
-                <div class="smallTitle">
-                    <p>${p.title}</p>
-                </div>
-            </a>
-        `; 
 
-        activateDrape(DOM.querySelector( 'a'), DOM.querySelector( 'a').href );
+        const link = document.createElement( 'a');
+        link.href = `${window.location.origin}/project?title=${p.title}`;
+        link.innerHTML = `
+            <img src="${p.headerIMG}"/>
+            <div class="smallTitle">
+                <p>${p.title}</p>
+            </div>
+        `;
+
+        DOM.querySelector( '.secondaryProjectContainer').append( link);
+        activateDrape( link, link.href );
     })
-
 
     OBSERVER.observeElements( DOM.querySelectorAll( '.blogSection'), 'observing--blogSection');
 
     contact.preRender()
-    nav.preRender( 'home' );
+    nav.preRender( 'home');
 }
