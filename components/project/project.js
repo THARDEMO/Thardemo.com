@@ -4,7 +4,6 @@ import * as cManager from '../cManager.js';
 import { OBSERVER } from '../../identity/observer.js';
 import { activateDrape } from '../../identity/activateDrape.js';
 
-
 import { component as contact } from '../contact/contact.js';
 import { component as nav } from '../nav/nav.js';
 import { component as drape } from '../drape/drape.js';
@@ -32,11 +31,15 @@ function render( DOM ) {
 
     const PROJECT = STATE.Get( 'projects').find( p => p.title === projectTitle);
 
+    
     if( !PROJECT) {
         console.log(' no project was found 404');
         return
     }
 
+    document.title = `Project | ${PROJECT.title}`
+    document.querySelector( 'meta[name=description]').setAttribute('content', 'Teo Hardemo portfolio website @ thardemo.com. Projekt description of: ' + PROJECT.title + ', ' + PROJECT.description)
+        
     DOM.innerHTML = `
         <div class="headingProject">
 

@@ -31,7 +31,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THardemo.com</title>
+    <title>Teo Hardemo | Portfolio</title>
+    <meta name="description" content="Teo Hardemo portfolio website @ thardemo.com. Read About me, My experience, Projects i have worked on and how to contact me. This portfolio was crafted to show of the skills i posess within programing and web development.">
     <link rel="shortcut icon" href="./media/images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./index.css">
     <?php echo importStyles( $path ) ?>

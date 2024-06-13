@@ -48,6 +48,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
     user-select: none;
+    overscroll-behavior: none;
 }
 
 /* SCROLLBARS ON CHROME, EDGE, SAFARI, OPERA */
@@ -71,7 +72,6 @@ body {
     background-color: var(--MainBG);
     /* overflow: hidden; */
     transition: background .3s ease-in-out;
-
     overflow-x: hidden;
 }
 
