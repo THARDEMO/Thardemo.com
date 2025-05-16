@@ -1,2 +1,2 @@
 # Thardemo.com
- Portfolio Website
+This is a deprecated project and is no longer in use.
